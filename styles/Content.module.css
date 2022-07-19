@@ -1,0 +1,363 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+
+/* body {
+    margin: 40px 0 0;
+    background: #91D1D3;
+    font-family: 'Roboto', sans-serif;
+} */
+
+.pape {
+    width: 20%;
+    height: 50px;
+    background: #fff;
+    box-shadow:
+   /* The top layer shadow */
+   0 1px 1px rgba(0,0,0,0.15),
+   /* The second layer */
+   0 10px 0 -5px #eee,
+   /* The second layer shadow */
+   0 10px 1px -4px rgba(0,0,0,0.15),
+    /* The third layer */
+   0 20px 0 -10px #eee,
+   /* The third layer shadow */
+   0 20px 1px -9px rgba(0,0,0,0.15);
+   /* Padding for demo purposes */
+   padding: 5px;
+   
+  }
+
+.papeTag {
+    width: 10%;
+    height: 40px;
+    background: #ffff;
+    box-shadow:
+   /* The top layer shadow */
+   0 1px 1px rgba(0,0,0,0.15),
+   /* The second layer */
+   0 10px 0 -5px #eee,
+   /* The second layer shadow */
+   0 10px 1px -4px rgba(0,0,0,0.15);
+    /* The third layer */
+   z-index: 3;
+   padding: 5px;
+   
+  }
+.paperHeader {
+    position: absolute;
+    width: 50%;
+    max-width: 50%;
+    min-width: 400px;
+    height: 480px;
+    margin: 0 auto;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.paperHeader:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.paperHeader-content {
+    position: absolute;
+    top: 30px; right: 0; bottom: 30px; left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+}
+
+.paper {
+    position: relative;
+    width: 70%;
+    max-width: 90%;
+    min-width: 400px;
+    height: 480px;
+    margin: 0 auto;
+    background: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.paper:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.paperContent {
+    position: absolute;
+    top: 30px; right: 0; bottom: 30px; left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+}
+
+.paperContent textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.paperContent div {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.sticker {
+    position: relative;
+    width: 30%;
+    max-width: 40%;
+    min-width: 30%;
+    height: 480px;
+    margin: 0 auto;
+    background: #fafafa80;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.sticker:before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 60px;
+    background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+    background-size: 30px 30px;
+    border-right: 3px solid #D44147;
+    box-sizing: border-box;
+}
+
+.stickerContent {
+    position: absolute;
+    top: 30px; right: 0; bottom: 30px; left: 60px;
+    background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+    background-size: 30px 30px;
+    word-break: keep-all;
+}
+
+.stickerContent textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.stickerContent div {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    line-height: 30px;
+    padding: 0 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #000000;
+    font-family: 'ParkYongJun';
+    font-weight: bold;
+    font-size: 25px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.wrapper {
+    height: 100vh;
+    /*This part is important for centering*/
+    display: grid;
+    place-items: center;
+  }
+  
+.typingDemo {
+    width: 50ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    animation-play-state: paused;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: "parkyongJun";
+    font-size: 2em;
+  }
+
+
+.frame {
+    background-color:#ddc;
+    border:solid 5vmin #eee;
+    border-bottom-color:#fff;
+    border-left-color:#eee;
+    border-radius:2px;
+    border-right-color:#eee;
+    border-top-color:#ddd;
+    box-shadow:0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25);
+    box-sizing:border-box;
+    display:inline-block;
+    margin:10vh 10vw;
+    
+    padding:8vmin;
+    position:relative;
+    text-align:center;
+  }
+.frame:before {
+      border-radius:2px;
+      bottom:-2vmin;
+      box-shadow:0 2px 5px 0 rgba(0,0,0,.25) inset;
+      content:"";
+      left:-2vmin;
+      position:absolute;
+      right:-2vmin;
+      top:-2vmin;
+    }
+.frame:after {
+      border-radius:2px;
+      bottom:-2.5vmin;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+      content:"";
+      left:-2.5vmin;
+      position:absolute;
+      right:-2.5vmin;
+      top:-2.5vmin;
+    }
+
+
+    .projectPaper {
+        position: relative;
+        width: 50%;
+        max-width: 70%;
+        min-width: 400px;
+        height: 540px;
+        margin: 0 auto;
+        background: #fafafa;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,.3);
+        overflow: hidden;
+    }
+    .projectPaper:before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 0;
+        width: 60px;
+        background: radial-gradient(#575450 6px, transparent 7px) repeat-y;
+        background-size: 30px 30px;
+        border-right: 3px solid #D44147;
+        box-sizing: border-box;
+    }
+    
+    .projectPaperContent {
+        position: absolute;
+        top: 30px; right: 0; bottom: 30px; left: 60px;
+        background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
+        background-size: 30px 30px;
+    }
+    
+    .projectPaperContent textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        line-height: 30px;
+        padding: 0 10px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: 'ParkYongJun';
+        font-weight: bold;
+        font-size: 25px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+    .projectPaperContent div {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        line-height: 30px;
+        padding: 0 10px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        color: #000000;
+        font-family: 'ParkYongJun';
+        font-weight: bold;
+        font-size: 25px;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+
+/* footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(0,0,0,.6);
+}
+footer a {
+    color: rgba(255,255,255,.8);
+} */
+
+@font-face {
+    font-family: 'ParkYongJun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/ParkYongJun.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }

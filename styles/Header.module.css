@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Handlee);
 
+/* body {
+    margin: 40px 0 0;
+    background: #91D1D3;
+    font-family: 'Roboto', sans-serif;
+} */
 
 .paperHeader {
     position: absolute;
@@ -30,14 +35,14 @@
     box-sizing: border-box;
 }
 
-.paperHeader-content {
+.paperHeaderContent {
     position: absolute;
     top: 30px; right: 0; bottom: 30px; left: 60px;
     background: linear-gradient(transparent, transparent 28px, #91D1D3 28px);
     background-size: 30px 30px;
 }
 
-.paperHeader div {
+.paperHeaderContent div {
     width: 100%;
     max-width: 100%;
     height: 100%;

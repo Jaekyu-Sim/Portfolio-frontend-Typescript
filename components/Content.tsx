@@ -36,8 +36,9 @@ import handKeypointDetectionOutput from '../img/HandKeypointDetectionOutput.PNG'
 import SKHynixLogo from '../img/SKHynix.jpg'
 import SKCCLogo from '../img/SKCC.png'
 
-import "../components/Content.css"
+import ContentStyles from "../styles/Content.module.css"
 
+// import AOS from 'aos';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -61,19 +62,21 @@ position: fixed;
 const Content = () => {
 
     //Variables
-    AOS.init();
+    //AOS.init();
 
-    let size = {
-        width: window.innerWidth || document.body.clientWidth,
-        height: window.innerHeight || document.body.clientHeight 
-      };
+    // let size = {
+    //     width: window.innerWidth || document.body.clientWidth,
+    //     height: window.innerHeight || document.body.clientHeight 
+    //   };
 
     
 
     //States
     const [cardLoading, setCardLoading] = useState(false);
-    const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
-    const [browserHeight, setBrowserHeight] = useState(window.innerHeight);
+    //const [browserWidth, setBrowserWidth] = useState(window.innerWidth);
+    //const [browserHeight, setBrowserHeight] = useState(window.innerHeight);
+    const [browserWidth, setBrowserWidth] = useState(0);
+    const [browserHeight, setBrowserHeight] = useState(0);
     const [project1Content, setProject1Content] = useState("pause");
     const [project2Content, setProject2Content] = useState("pause");
     const [project3Content, setProject3Content] = useState("pause");
@@ -88,14 +91,22 @@ const Content = () => {
         setBrowserWidth(window.innerWidth);
     }
 
+    const handleBrowserLoad = () => {
+        console.log("로드됨", window.innerHeight, window.innerWidth);
+        setBrowserHeight(window.innerHeight);
+        setBrowserWidth(window.innerWidth);
+    }
+
     //useEffect
-    useEffect(()=>{
-        console.log('가로 값이 바뀜', window.innerWidth)
-      }, [window.innerWidth]);
+    // useEffect(()=>{
+    //     console.log('가로 값이 바뀜', window.innerWidth)
+    //     setBrowserWidth(window.innerWidth);
+    //   }, [window.innerWidth]);
     
-    useEffect(()=>{
-    console.log('세로 값이 바뀜', window.innerHeight)
-    }, [window.innerHeight]);
+    // useEffect(()=>{
+    //     console.log('세로 값이 바뀜', window.innerHeight)
+    //     setBrowserHeight(window.innerHeight);
+    // }, [window.innerHeight]);
 
     const handleBrowserScroll = () => {
         console.log("스크롤 변화 감지됨", window.scrollY, project1Content);
@@ -163,6 +174,10 @@ const Content = () => {
     }
 
     useEffect(() => {
+        AOS.init();
+    })
+
+    useEffect(() => {
         window.addEventListener("resize", handleBrowserResize);
         return () => {
             window.removeEventListener("resize", handleBrowserResize);
@@ -176,32 +191,42 @@ const Content = () => {
         }
     }, []);
 
+    useEffect(() => {
+        console.log("로딩완료")
+        handleBrowserLoad()
+        window.addEventListener("load", handleBrowserLoad);
+        return () => {
+            window.removeEventListener("load", handleBrowserLoad);
+        }
+    }, []);
+
 
     return (
         <div style={{width:"100%"}}>
         <div style={{background:"#91D1D3", position: "relative",  height: "100%", width:browserWidth, minHeight:"50px", flex:"1"}}>
             <div style={{paddingLeft:"5%", paddingBottom:"20px"}}>
-                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
+                <div className={ContentStyles.pape} style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
 
                     1. Introduction
 
                 </div>
             </div>
-            <div className="paper">
-                <div className="paper-content">
+            <div className={ContentStyles.paper}>
+                <div className={ContentStyles.paperContent}>
                     <div style={{height:"fit-content"}}>
                         안녕하세요, 깊이있게 실력을 키우고자 하는 개발자 <span style={{color:"blue"}}>심재규</span> 입니다.<br></br>
                         낯선 분야로의 도전을 두려워 하지 않고, 꾸준히 역량향상을 하며 개발 영역을 서서히 넓히고 있습니다.<br></br><br></br>
-                        <span style={{color:"blue", justifyContent:"center", alignItems:"center"}}>"현실에 안주하지 말자"</span><br></br><br></br>
+                        <span style={{color:"blue", justifyContent:"center", alignItems:"center"}}>현실에 안주하지 말자</span><br></br><br></br>
                         제가 가장 추구하고있는 인생모토입니다. 이 말을 모토로 업무에 임하며, 타협없이 일하고 꾸준히 역량 향상을 추구해오고 있습니다.<br></br>
                         또한, 낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.<br></br><br></br>
                     </div>
                     <div style={{}}>
-                        Contact
+                        <div>Contact
+                        
                         <ul>
                             <li>
                                 Github : 
-                                <a href="https://github.com/JAEKYU-SIM">
+                                <a href="https://github.com/JAEKYU-SIM" style={{color:"blue"}}>
                                     {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
                                     https://github.com/JAEKYU-SIM
                                 </a>
@@ -210,7 +235,7 @@ const Content = () => {
                             <br></br>
                             <li>
                                 Blog : 
-                                <a href="https://blog.naver.com/worb1605">
+                                <a href="https://blog.naver.com/worb1605" style={{color:"blue"}}>
                                     {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
                                     https://blog.naver.com/worb1605
                                 </a>
@@ -221,6 +246,7 @@ const Content = () => {
                             </li>
                             {/* <img style={{width:"2%"}} src={githubIcon}></img>*/}
                         </ul>
+                        </div>
                     </div>
 
 
@@ -228,7 +254,7 @@ const Content = () => {
             </div>
 
             <div style={{paddingLeft:"5%", paddingBottom:"20px", paddingTop:"50px"}}>
-                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
+                <div className={ContentStyles.pape} style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
 
                     2. Tech Stack
 
@@ -250,14 +276,14 @@ const Content = () => {
             </div>
             <div style={{display:"flex"}}>
                 <div data-aos="flip-right" style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
-                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
+                    <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Frontend
 
                     </div>
                 </div>
-                <div  className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(10%, 10%)"}} >
-                    <div data-aos="flip-right" className="sticker-content">
+                <div  className={ContentStyles.sticker} style={{zIndex:"1", left: "0%", transform: "translate(10%, 10%)"}} >
+                    <div data-aos="flip-right" className={ContentStyles.stickerContent}>
                         <div data-aos="flip-right" style={{height:"fit-content"}}>
                             <br></br>React <br></br>
                             <ul>
@@ -287,14 +313,14 @@ const Content = () => {
                     </div>
                 </div>              
                 <div  data-aos="flip-left" style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
-                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
+                    <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Backend
 
                     </div>
                 </div>
-                <div  className="sticker" style={{zIndex:"1", left: "-7%", transform: "translate(10%, 10%)"}}>
-                    <div data-aos="flip-left" className="sticker-content">
+                <div  className={ContentStyles.sticker} style={{zIndex:"1", left: "-7%", transform: "translate(10%, 10%)"}}>
+                    <div data-aos="flip-left" className={ContentStyles.stickerContent}>
                         <div data-aos="flip-left" style={{height:"fit-content"}}>
                             <br></br>Springboot <br></br>
                             <ul>
@@ -324,14 +350,14 @@ const Content = () => {
 
             <div data-aos="flip-up" style={{display:"flex", paddingTop:"30px", justifyContent:"center"}}>
                 <div style={{paddingBottom:"20px", paddingTop:"55px", paddingRight:"8%",position:"absolute", zIndex:"2"}}>
-                    <div className="papeTag" style={{fontFamily:"ParkYongJun", fontSize:"30px",width:"100%"}}>
+                    <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px",width:"100%"}}>
 
                         AI / Computer Vision
 
                     </div>
                 </div>
-                <div className="sticker" style={{zIndex:"1", left: "0%", transform: "translate(0%, 10%)"}}>
-                    <div className="sticker-content">
+                <div className={ContentStyles.sticker} style={{zIndex:"1", left: "0%", transform: "translate(0%, 10%)"}}>
+                    <div className={ContentStyles.stickerContent}>
                         <div style={{height:"fit-content"}}>
                             <br></br>AI <br></br>
                             <ul>
@@ -359,42 +385,42 @@ const Content = () => {
             </div>
 
             <div style={{paddingLeft:"5%", paddingBottom:"0px", paddingTop:"100px"}}>
-                <div className="pape" style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
+                <div className={ContentStyles.pape} style={{fontFamily:"ParkYongJun", fontSize:"30px"}}>
 
                     3. Projects
 
                 </div>
             </div>
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <div className="frame" style={{width:"30%"}}>
-                    <img style={{width:"100%"}} src={poseEstimationOutput}></img>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
+                    <Image style={{width:"100%"}} src={poseEstimationOutput} alt="poseEstimationImg"></Image>
                 </div>
 
 
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 프로젝트명<br></br>
                                  - 가려짐이 있는 신체의 키포인트 검출 (18.03 ~ 19.02)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 1명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 회사명<br></br>
                                  - 로보메이션(산학과제)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 주요 기술<br></br>
                                  - Tensorflow, Python, Computer Vision
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project1Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -419,30 +445,30 @@ const Content = () => {
                 
 
 
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
                                  - 가려짐이 있는 손 이미지의 키포인트 검출 (19.03 ~ 20.02)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 1명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
                                  - 로보메이션(산학과제)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
                                  - Tensorflow, Python, Computer Vision
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -460,43 +486,43 @@ const Content = () => {
                     </div>
                 </div>
 
-                <div className="frame" style={{width:"30%"}}>
-                    <img style={{width:"100%"}} src={handKeypointDetectionOutput}></img>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
+                    <Image style={{width:"100%"}} src={handKeypointDetectionOutput} alt="handKyepointDetectionImg"></Image>
                 </div>
             </div>
 
 
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
                 
-                <div className="frame" style={{width:"30%"}}>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
                     <Image style={{width:"100%"}} src={SKHynixLogo} alt="SKHynixLogo"></Image>
                 </div>
 
 
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 프로젝트명<br></br>
                                  - SK Hynix M16 생산정보시스템 smartMCC 구축 (20.04 ~ 21.02)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 2명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 회사명<br></br>
                                  - SK Hynix
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 주요 기술<br></br>
                                  - C#, Java, Oracle SQL
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -515,30 +541,30 @@ const Content = () => {
             </div>
 
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 프로젝트명<br></br>
                                  - SK Hynix R4 CPS 가상장비시스템 구축 (21.03 ~ 22.02)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 3명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 회사명<br></br>
                                  - SK Hynix
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 주요 기술<br></br>
                                  - React, Javascript, Springboot, Java, Oracle SQL
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -555,40 +581,40 @@ const Content = () => {
                         </div>
                     </div>
                 </div>
-                <div className="frame" style={{width:"30%"}}>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
                     <Image style={{width:"100%"}} src={SKHynixLogo} alt="SKHynixLogo"></Image>
                 </div>
                 
             </div>
 
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
-                <div className="frame" style={{width:"30%"}}>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
                     <Image style={{width:"100%"}} src={SKCCLogo} alt="SKCCLogo"></Image>
                 </div>
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 프로젝트명<br></br>
                                  - SK C&C Log Anomaly Detection (21.12 ~ 22.02)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 1명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 회사명<br></br>
                                  - SK C&C
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 주요 기술<br></br>
                                  - Python, Tensorflow
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -614,30 +640,30 @@ const Content = () => {
 
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
                 
-                <div className="projectPaper">
-                    <div className="projectPaper-content">
+                <div className={ContentStyles.projectPaper}>
+                    <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 프로젝트명<br></br>
                                  - SK Hynix CPS 기능 고도화 (22.03 ~ 현재)
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  - 1명
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 회사명<br></br>
                                  - SK Hynix
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 주요 기술<br></br>
                                  - React, Javascript, Springboot, Java, JUnit5, Oracle SQL
                             </div>
                             <br></br>
-                            <div className="typing-demo"  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -658,7 +684,7 @@ const Content = () => {
                     </div>
                 </div>
 
-                <div className="frame" style={{width:"30%"}}>
+                <div className={ContentStyles.frame} style={{width:"30%"}}>
                     <Image style={{width:"100%"}} src={SKHynixLogo} alt="SKHynixLogo"></Image>
                 </div>
                 

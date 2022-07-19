@@ -83,7 +83,7 @@ const Header = () => {
                     {/* 안녕하세요, 심재규 입니다. 부분 */}
                 </HeaderText>
                 <div className = {HeaderStyles.paperHeader} >
-                    <div className={HeaderStyles.paperContent}>
+                    <div className={HeaderStyles.paperHeaderContent}>
                         <div style={{color:"#686561"}}>
                         <br></br>
                         <br></br>
