@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Content from '../components/Content'
+import Footer from '../components/Footer'
 import dynamic from 'next/dynamic'
 
 // const DynamicComponentWithNoSSR = dynamic(() =>
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Header></Header>
       <Content></Content>
-      Test
+      <Footer></Footer>
     </div>
   )
 }

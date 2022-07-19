@@ -1,34 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {Row, Col, Divider, Typography, Tag} from "antd" ;
-import developerImg1 from '../img/개발자1.png'
-import developerImg2 from '../img/개발자2.png'
-import developerImg3 from '../img/개발자3.png'
-import developerImg4 from '../img/개발자4.png'
-import developerImg5 from '../img/개발자심재규입니다.png'
-//import githubIcon from '../img/githubIcon.png';
-import githubIcon from '../img/githubIcon.svg'
-import title from '../img/Title.png';
-
-// import title2 from '../img/Title2.PNG';
-// import myPic from '../img/내사진2.jpg';
-// import myPic2 from '../img/우리사진.jpg';
-// import myPic3 from '../img/졸업작품.PNG';
-
-import CarouselImg1 from '../img/TitlePage/001.jpg'
-import CarouselImg2 from '../img/TitlePage/002.jpg'
-
-import SubPageImg1 from '../img/SubPage/003.jpg'
-import SubPageImg2 from '../img/SubPage/004.jpg'
-import SubPageImg3 from '../img/SubPage/005.jpg'
-
-import ButtonMui from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Chip from '@mui/material/Chip';
-
-import githubResult1 from '../img/githubResult1.png'
 
 
 import poseEstimationOutput from '../img/PoseEstimationOutput.PNG'
@@ -43,6 +14,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import Image from "next/image";
+
+import { introductionData, techstackData, techstackFrontendData, techstackCssData, techstackBackendData, techstackSQLData, techstackAIData, techstackCVData, projectList } from "../datas/contentData";
 
 //import Divider from '@mui/material/Divider';
 
@@ -214,12 +187,21 @@ const Content = () => {
             <div className={ContentStyles.paper}>
                 <div className={ContentStyles.paperContent}>
                     <div style={{height:"fit-content"}}>
-                        안녕하세요, 깊이있게 실력을 키우고자 하는 개발자 <span style={{color:"blue"}}>심재규</span> 입니다.<br></br>
-                        낯선 분야로의 도전을 두려워 하지 않고, 꾸준히 역량향상을 하며 개발 영역을 서서히 넓히고 있습니다.<br></br><br></br>
-                        <span style={{color:"blue", justifyContent:"center", alignItems:"center"}}>현실에 안주하지 말자</span><br></br><br></br>
-                        제가 가장 추구하고있는 인생모토입니다. 이 말을 모토로 업무에 임하며, 타협없이 일하고 꾸준히 역량 향상을 추구해오고 있습니다.<br></br>
-                        또한, 낯선분야에서의 시작을 두려워 하지 않고, 문제를 빠르게 정의하고 해결하는 개발자가 되도록 노력하고있습니다.<br></br><br></br>
+                        {introductionData.line1} <span style={{color:"blue"}}>{introductionData.line2}</span> {introductionData.line3}<br></br>
                     </div>
+                    <div style={{height:"fit-content"}}>
+                        {introductionData.line4}<br></br><br></br>
+                    </div>
+                    <div style={{height:"fit-content"}}>
+                        <span style={{color:"blue", justifyContent:"center", alignItems:"center"}}>{introductionData.line5}</span><br></br><br></br>
+                    </div>
+                    <div style={{height:"fit-content"}}>
+                        {introductionData.line6}<br></br>
+                    </div>
+                    <div style={{height:"fit-content"}}>
+                        {introductionData.line7}<br></br><br></br>
+                    </div>
+
                     <div style={{}}>
                         <div>Contact
                         
@@ -261,21 +243,14 @@ const Content = () => {
                 </div>
             </div>
             <div style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex"}} >
-            Language : Javascript / Java / Oracle SQL / Python<br></br>
-            Framework/Library : React / Vue / Springboot / Tensorflow<br></br>
-            Domain : 반도체, AI, Computer Vision
-            {/* <Chip label="React" color="primary"></Chip>
-            <Chip label="Javascript" color="secondary"></Chip>
-            <Chip label="Springboot" color="primary"></Chip>
-            <Chip label="Java" color="primary"></Chip>
-            <Chip label="Tensorflow" color="primary"></Chip>
-            <Chip label="Python" color="primary"></Chip>
-            <Chip label="AI" color="primary"></Chip>
-            <Chip label="Compurter Vision" color="primary"></Chip>
-            <Chip label="Pose Estimation" color="primary"></Chip> */}
+            Language : {techstackData.techstackLanguage}<br></br>
+            Framework/Library : {techstackData.techstackFramework}<br></br>
+            Domain : {techstackData.techstackDomain}
+            
+
             </div>
             <div style={{display:"flex"}}>
-                <div data-aos="flip-right" style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                <div data-aos="flip-right" style={{paddingLeft:"17.5%", paddingBottom:"20px", paddingTop:"60px", position:"absolute", zIndex:"2"}}>
                     <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Frontend
@@ -288,31 +263,34 @@ const Content = () => {
                             <br></br>React <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    Redux, Saga 패턴을 적용한 상태관리 라이브러리를 사용한 경험이 있습니다.
+                                    {techstackFrontendData.techstackFrontendLine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    Antd, Ag-grid, MUI 등의 라이브러리를 사용하여 기업 시스템 개발을 한 경험이 있습니다.
+                                    {techstackFrontendData.techstackFrontendLine2}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    Socket 통신 기반의 React Chatting 프로그램을 구현해본 경험이 있습니다.
+                                    {techstackFrontendData.techstackFrontendLine3}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    실시간 가상 반도체장비 모니터링 시스템 UI 구축 경험이 있습니다.
+                                    {techstackFrontendData.techstackFrontendLine4}
+                                </li>
+                                <li style={{fontSize:"20px"}}>
+                                    {techstackFrontendData.techstackFrontendLine5}
                                 </li>
                             </ul>
                             <br></br>CSS<br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    CSS 파일을 통하여 UI Component들의 Style 값을 관리할 수 있습니다.
+                                    {techstackCssData.techstackCssLine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    CSS 문법에 익숙합니다.
+                                    {techstackCssData.techstackCssLine2}
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>              
-                <div  data-aos="flip-left" style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"55px", position:"absolute", zIndex:"2"}}>
+                <div  data-aos="flip-left" style={{paddingLeft:"60.5%", paddingBottom:"20px", paddingTop:"60px", position:"absolute", zIndex:"2"}}>
                     <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px", alignItems:"center", justifyContent:"center", display:"flex", width:"100%"}}>
 
                         Backend
@@ -325,22 +303,22 @@ const Content = () => {
                             <br></br>Springboot <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    Springboot를 활용한 REST API 구축을 할 수 있습니다.
+                                    {techstackBackendData.techstackBackendLine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    F/E 의 API 호출에 따른 내부 Core Logic을 구현할 수 있습니다.
+                                    {techstackBackendData.techstackBackendLine2}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    Service/Implement 의 추상화 구조로 프로젝트를 구축한 경험이 있습니다.
+                                    {techstackBackendData.techstackBackendLine3}
                                 </li>
                             </ul>
                             <br></br>SQL<br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    Oracle SQL 기반의 Table 설계, Query문 설계 업무를 수행한 경험이 있습니다.
+                                    {techstackSQLData.techstackSQLLine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    index 를 설정하여 탐색 속도 향상을 구현할 수 있습니다.
+                                    {techstackSQLData.techstackSQLLine2}
                                 </li>
                             </ul>
                         </div>
@@ -349,7 +327,7 @@ const Content = () => {
             </div>
 
             <div data-aos="flip-up" style={{display:"flex", paddingTop:"30px", justifyContent:"center"}}>
-                <div style={{paddingBottom:"20px", paddingTop:"55px", paddingRight:"8%",position:"absolute", zIndex:"2"}}>
+                <div style={{paddingBottom:"20px", paddingTop:"60px", paddingRight:"8%",position:"absolute", zIndex:"2"}}>
                     <div className={ContentStyles.papeTag} style={{fontFamily:"ParkYongJun", fontSize:"30px",width:"100%"}}>
 
                         AI / Computer Vision
@@ -362,20 +340,20 @@ const Content = () => {
                             <br></br>AI <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    Object Detection, GAN, STN 등 다양한 Network를 학습하고 구현하였습니다.
+                                    {techstackAIData.techstackAILine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    구현한 Network의 한계점을 찾고, 이를 개선하는 활동을 해왔습니다.
+                                    {techstackAIData.techstackAILine2}
                                 </li>
                                 
                             </ul>
                             <br></br>Computer Vision <br></br>
                             <ul>
                                 <li style={{fontSize:"20px"}}>
-                                    Computer Vision 분야 중 Human Pose Estimation 분야에 대해 연구하고 개발한 경험이 있습니다.
+                                    {techstackCVData.techstackCVLine1}
                                 </li>
                                 <li style={{fontSize:"20px"}}>
-                                    Edge detection, Optical Flow 등 고전 영상처리 알고리즘의 동작 원리에 대해 이해하고 구현한 경험이 있습니다.
+                                    {techstackCVData.techstackCVLine2}
                                 </li>
                             </ul>
                             
@@ -402,35 +380,35 @@ const Content = () => {
                         <div style={{height:"fit-content"}}>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 프로젝트명<br></br>
-                                 - 가려짐이 있는 신체의 키포인트 검출 (18.03 ~ 19.02)
+                                 {projectList[0].projectName}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 1명
+                                {projectList[0].projectTO}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 회사명<br></br>
-                                 - 로보메이션(산학과제)
+                               {projectList[0].corpName}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 주요 기술<br></br>
-                                 - Tensorflow, Python, Computer Vision
+                                {projectList[0].mainTech}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project1Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        Pose Estimation 분야 SOTA 논문(Open Pose) 학습
+                                        {projectList[0].content[0]}
                                     </li>
                                     <li >
-                                        Base Line Network 구현 및 및 한계점 확인
+                                        {projectList[0].content[1]}
                                     </li>
                                     <li>
-                                        Recurrent 구조 Network 고안 및 적용, 개발
+                                        {projectList[0].content[2]}
                                     </li>
                                 </ul>
                             </div>
@@ -450,35 +428,35 @@ const Content = () => {
                         <div style={{height:"fit-content"}}>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
-                                 - 가려짐이 있는 손 이미지의 키포인트 검출 (19.03 ~ 20.02)
+                                {projectList[1].projectName}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 1명
+                                 {projectList[1].projectTO}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
-                                 - 로보메이션(산학과제)
+                                {projectList[1].corpName}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
-                                 - Tensorflow, Python, Computer Vision
+                                 {projectList[1].mainTech}
                             </div>
                             <br></br>
                             <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        Hand Keypoint Detection 분야 SOTA 논문 학습
+                                        {projectList[1].content[0]}
                                     </li>
                                     <li >
-                                        Base Line Network 구현 및 기존 Hand Keypoint Detection 한계점 확인
+                                         {projectList[1].content[1]}
                                     </li>
                                     <li>
-                                        Hand Image Cropping 방식 개선 및 Recurrnt구조  Network 고안 및 적용
+                                         {projectList[1].content[2]}
                                     </li>
                                 </ul>
                             </div>
@@ -501,35 +479,35 @@ const Content = () => {
 
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
-                        <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
+                    <div style={{height:"fit-content"}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
-                                 - SK Hynix M16 생산정보시스템 smartMCC 구축 (20.04 ~ 21.02)
+                                {projectList[2].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 2명
+                                 {projectList[2].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
-                                 - SK Hynix
+                                {projectList[2].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
-                                 - C#, Java, Oracle SQL
+                                 {projectList[2].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        SK Hynix 신규 Fab 증설에 따른 Legacy 시스템 횡전개
+                                        {projectList[2].content[0]}
                                     </li>
                                     <li >
-                                        smartMCC 시스템 기능 고도화
+                                         {projectList[2].content[1]}
                                     </li>
                                 </ul>
                             </div>
@@ -543,38 +521,38 @@ const Content = () => {
             <div style={{alignItems:"center", display:"flex", justifyContent:"center"}}>
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
-                        <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
+                    <div style={{height:"fit-content"}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
-                                 - SK Hynix R4 CPS 가상장비시스템 구축 (21.03 ~ 22.02)
+                                {projectList[3].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 3명
+                                 {projectList[3].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
-                                 - SK Hynix
+                                {projectList[3].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
-                                 - React, Javascript, Springboot, Java, Oracle SQL
+                                 {projectList[3].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        React 기반의 SK Hynix 가상장비 시스템 UI 컴포넌트 개발
+                                        {projectList[3].content[0]}
                                     </li>
                                     <li >
-                                        Spingboot 기반의 가상장비 시스템 API 개발
+                                         {projectList[3].content[1]}
                                     </li>
-                                    <li >
-                                        DB Table 설계 및 Query문 작성
+                                    <li>
+                                         {projectList[3].content[2]}
                                     </li>
                                 </ul>
                             </div>
@@ -594,40 +572,40 @@ const Content = () => {
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
-                                 - SK C&C Log Anomaly Detection (21.12 ~ 22.02)
+                                {projectList[4].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 1명
+                                 {projectList[4].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
-                                 - SK C&C
+                                {projectList[4].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
-                                 - Python, Tensorflow
+                                 {projectList[4].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        팀 내 Log Anomaly Detection PoC 업무 수행
+                                        {projectList[4].content[0]}
                                     </li>
                                     <li >
-                                        System Log Anomaly Detection 분야 Research 수행
+                                         {projectList[4].content[1]}
                                     </li>
-                                    <li >
-                                        DeepLog(Log Anomaly Detection 분야 SOTA) Paper 리뷰 및 구현 결과 발표(to 파트)
+                                    <li>
+                                         {projectList[4].content[2]}
                                     </li>
-                                    <li >
-                                        SK Hynix 내 Legacy 시스템 Log로 학습 및 결과 발표
+                                    <li>
+                                         {projectList[4].content[3]}
                                     </li>
                                 </ul>
                             </div>
@@ -642,41 +620,41 @@ const Content = () => {
                 
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
-                        <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
+                    <div style={{height:"fit-content"}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트명<br></br>
-                                 - SK Hynix CPS 기능 고도화 (22.03 ~ 현재)
+                                {projectList[5].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 프로젝트 수행 인원<br></br>
-                                 - 1명
+                                 {projectList[5].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 회사명<br></br>
-                                 - SK Hynix
+                                {projectList[5].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 주요 기술<br></br>
-                                 - React, Javascript, Springboot, Java, JUnit5, Oracle SQL
+                                 {projectList[5].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
-                                        React 기반의 SK Hynix 가상장비 시스템 UI 컴포넌트 추가 개발
+                                        {projectList[5].content[0]}
                                     </li>
                                     <li >
-                                        Javascript 를 이용한 가상장비 XML 형태 로그파일 Parsing Modal 개발
+                                         {projectList[5].content[1]}
                                     </li>
-                                    <li >
-                                        가상장비 Recovery 기능 구현
+                                    <li>
+                                         {projectList[5].content[2]}
                                     </li>
-                                    <li >
-                                        가상장비 Backend 서버 API 개발 및 TDD 적용(JUnit5)
+                                    <li>
+                                         {projectList[5].content[3]}
                                     </li>
                                 </ul>
                             </div>
