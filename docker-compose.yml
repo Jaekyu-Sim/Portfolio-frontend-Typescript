@@ -1,0 +1,19 @@
+version: "3"
+services:
+  nginx:
+
+  node:
+
+  next:
+    container_name: "next"
+    restart: "on-failure"
+    build:
+      context: ./next
+      dockerfile: Dockerfile
+    volumes:
+      # hot reload를 위해 mount
+      - "./next:/usr/src/next"
+      - "/usr/src/next/node_modules"
+      - "/usr/src/next/.next" 
+    ports:
+      - "3000:3000"
