@@ -1,5 +1,4 @@
-# ngix 설치
-FROM nginx
+FROM node:14-alpine
 
 WORKDIR /usr/src/next
 
