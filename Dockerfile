@@ -11,7 +11,7 @@ WORKDIR /app
 RUN mkdir ./npmbuild
 
 # 현재 경로의 build 폴더를 이전 build 폴더 경로에 복사
-ADD ./build ./build
+ADD ./.next ./.next
 
 # nginx 기본 설정환경 삭제
 RUN rm /etc/nginx/conf.d/default.conf
