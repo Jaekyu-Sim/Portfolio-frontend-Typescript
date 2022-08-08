@@ -480,27 +480,27 @@ const Content = () => {
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
                     <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 프로젝트명<br></br>
                                 {projectList[2].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  {projectList[2].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 회사명<br></br>
                                 {projectList[2].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 주요 기술<br></br>
                                  {projectList[2].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project3Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -522,27 +522,27 @@ const Content = () => {
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
                     <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 프로젝트명<br></br>
                                 {projectList[3].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  {projectList[3].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 회사명<br></br>
                                 {projectList[3].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 주요 기술<br></br>
                                  {projectList[3].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project4Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -572,27 +572,27 @@ const Content = () => {
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
                         <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 프로젝트명<br></br>
                                 {projectList[4].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  {projectList[4].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 회사명<br></br>
                                 {projectList[4].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 주요 기술<br></br>
                                  {projectList[4].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project5Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
@@ -621,27 +621,27 @@ const Content = () => {
                 <div className={ContentStyles.projectPaper}>
                     <div className={ContentStyles.projectPaperContent}>
                     <div style={{height:"fit-content"}}>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 프로젝트명<br></br>
                                 {projectList[5].projectName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 프로젝트 수행 인원<br></br>
                                  {projectList[5].projectTO}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 회사명<br></br>
                                 {projectList[5].corpName}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 주요 기술<br></br>
                                  {projectList[5].mainTech}
                             </div>
                             <br></br>
-                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project2Content}}>
+                            <div className={ContentStyles.typingDemo}  style={{ width:"100%", animationPlayState:project6Content}}>
                                 * 내용<br></br>
                                 <ul>
                                     <li>
